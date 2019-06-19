@@ -49,6 +49,10 @@ fi
 if [ ! -z "$conf_app_settings_start_of_week" ] ; then
     wp option update start_of_week $conf_app_settings_start_of_week --quiet
 fi
+if [ ! -z "$conf_app_settings_site_switch_language" ] ; then
+    wp core language install $conf_app_settings_site_switch_language --quiet
+    wp site switch-language $conf_app_settings_site_switch_language --quiet
+fi
 # Media
 if [ ! -z "$conf_app_settings_large_size_h" ] ; then
     wp option update large_size_h $conf_app_settings_large_size_h --quiet
