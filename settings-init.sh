@@ -103,7 +103,7 @@ if [ ! -z "$wpi_settings_blog_public" ] ; then
 fi
 # Reading
 if [ ! -z "$wpi_settings_frontpage_name" ] && [ ! -z "$wpi_settings_page_on_front" ]; then
-    wp post create --post_type=page --post_title="$wpi_settings_frontpage_name" --post_content='Front Page created by wp-pro.club' --post_status=publish --quiet
+    wp post create --post_type=page --post_title="$wpi_settings_frontpage_name" --post_content='Front Page created by wpi.pw/app' --post_status=publish --quiet
     wp option update page_on_front $(wp post list --post_type=page --post_status=publish --posts_per_page=1 --pagename="$wpi_settings_frontpage_name" --field=ID --format=ids --allow-root) --quiet
 fi
 if [ ! -z "$wpi_settings_show_on_front" ] ; then
