@@ -113,7 +113,9 @@ fi
 # Extra settings
 wp post delete 1 2 --force --quiet
 wp widget reset --all --quiet
-wp plugin uninstall hello --quiet
+if [ "$(wpi_yq init.workflow)" == "wp-cli" ]; then
+  wp plugin uninstall hello --quiet
+fi
 
 # Set Settings init to false after setup
 sed -i "s/\bsettings: true\b/settings: false/g" ${PWD}/wpi-config/01-init.yml
