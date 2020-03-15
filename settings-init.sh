@@ -14,7 +14,7 @@ done
 # Get wpi-source for yml parsing, noroot, errors etc
 source <(curl -s https://raw.githubusercontent.com/wpi-pw/template-workflow/master/wpi-source.sh)
 
-cur_env=$1
+cur_env=$(cur_env)
 cur_wpi="wpi_env_${cur_env}_"
 
 printf "${GRN}=======================${NC}\n"
