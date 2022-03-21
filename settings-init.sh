@@ -114,7 +114,7 @@ if ! $(wp core is-installed); then
 
   # Extra settings
   wp post delete 1 2 --force --quiet
-  wp widget reset --all --quiet
+  wp widget reset --all --quiet 2>/dev/null
   if [ "$(wpi_yq init.workflow)" == "wp-cli" ]; then
     wp plugin uninstall hello --quiet
   fi
